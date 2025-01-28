@@ -18,3 +18,11 @@ airflow:
   env:
     - name: "AIRFLOW_VAR_TEST_VARIABLE"
       value: "testVARIABLE"
+
+  createUserJob:
+    useHelmHooks: false
+    applyCustomEnv: false
+    
+  migrateDatabaseJob:
+    useHelmHooks: false
+    applyCustomEnv: false
