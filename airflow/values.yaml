@@ -1,0 +1,20 @@
+airflow:
+  executor: "KubernetesExecutor"
+
+  logs:
+    persistence:
+      enabled: true
+
+  images:
+    airflow:
+      repository: demo-dag
+      tag: 0.0.1
+
+  secret:
+    - envName: "AIRFLOW_CONN_MY_PROD_DATABASE"
+      secretName: "dbconnection1"
+      secretKey: "connection"
+
+  env:
+    - name: "AIRFLOW_VAR_TEST_VARIABLE"
+      value: "testVARIABLE"
